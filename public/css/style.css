@@ -1,0 +1,20 @@
+body {
+	background-color: #BADA55;
+}
+
+a:link,a:visited {
+    color: #0000A0;
+}
+a:hover {
+    background-color: #0000FF;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+#lorem {
+	
+}
+
+#random {
+
+}
