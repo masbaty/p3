@@ -44,6 +44,10 @@ How many users?
 		@while ($i < $text['users'])
 			{{ $faker->name }}
 			<br />
+			{{ $faker->dateTimeThisCentury->format('mm-dd-yyyy') }}
+			<br />
+			{{ $faker->text }}
+			<br /><br />
 			<?php $i++; ?>
 		@endwhile
 
