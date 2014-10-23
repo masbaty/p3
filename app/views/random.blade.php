@@ -17,13 +17,13 @@ How many users?
 
 <form method='POST'>
 		<label for='users'>How many users? </label>
-			<input type='text' name='users' id='users' value='' />
+			<input type='text' name='users' id='users' value='' /><br />
 
 		<label for='birthdate'>Birthdate </label>
-			<input type="checkbox" name='birthdate' id='birthdate' />
+			<input type="checkbox" name='birthdate' id='birthdate' /><br />
 
 		<label for='profile'>Profile </label>
-			<input type="checkbox" name='profile' id='profile' />
+			<input type="checkbox" name='profile' id='profile' /><br />
 
 		<input type='submit' value='Generate Users!' />
 
@@ -36,7 +36,17 @@ How many users?
 			{{ $faker->address }}
 			<br />
 			{{ $faker->text }}
+
+			<br />
+			<br />
 			
+		<?php $i = 0;	?>
+		@while ($i < $text['users'])
+			{{ $faker->name }}
+			<br />
+			<?php $i++; ?>
+		@endwhile
+
 		@endif
 </form>
 

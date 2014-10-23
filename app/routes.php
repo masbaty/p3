@@ -42,9 +42,23 @@ Route::get('/user-generator', function() {
 
 Route::post('/user-generator', function() {
 	$users = Input::get('users');
+	$allInputs = Input::all();
+
+	foreach($allInputs as $key => $value) {
+		if ($key == 'birthdate')
+			$birthdaySelected = true;
+		else
+			$birthdaySelected = false;
+
+		if ($key == 'profile')
+			$profileSelected = true;
+		else
+			$profileSelected = false;
+
+	}
 
 	$faker = Faker\Factory::create();
-	$text = array('users' => $users, $faker);
+	$text = array('users' => $users, 'birthdaySelected' => $birthdaySelected, 'profileSelected' => $profileSelected);
 
 	return View::make('random')
 		->with('text', $text)
