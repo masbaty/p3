@@ -9,6 +9,8 @@
 
 @section("content")
 
+<a href="..">Back to main page</a>
+
 <h1>Lorem Ipsum Generator</h1>
 
 How many paragraphs? 
