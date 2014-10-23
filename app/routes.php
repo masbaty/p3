@@ -41,5 +41,5 @@ Route::get('/user-generator', function() {
 });
 
 Route::post('/user-generator', function() {
-
+	
 });
