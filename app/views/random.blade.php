@@ -31,12 +31,12 @@ How many users?
 		
 		@if(isset($text))
 			<h2>Here is your Lorem Ipsum text:</h2>
-
-			@foreach($text['paragraphs'] as $paragraph)
-				<p>
-					{{ $paragraph }}
-				</p
-			@endforeach
+			{{ $faker->name }}
+			<br />
+			{{ $faker->address }}
+			<br />
+			{{ $faker->text }}
+			
 		@endif
 </form>
 

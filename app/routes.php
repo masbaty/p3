@@ -41,5 +41,13 @@ Route::get('/user-generator', function() {
 });
 
 Route::post('/user-generator', function() {
-	
+	$users = Input::get('users');
+
+	$faker = Faker\Factory::create();
+	$text = array('users' => $users, $faker);
+
+	return View::make('random')
+		->with('text', $text)
+		->with('faker', $faker);
+
 });
