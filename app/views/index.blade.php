@@ -9,6 +9,8 @@
 
 @section("content")
 
+	<h1>Developer's Best Friend!</h1>
+
 	<div id="lorem">
 		<h2>Lorem Ipsum Generator</h2>
 		<p>
