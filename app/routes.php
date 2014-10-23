@@ -47,13 +47,13 @@ Route::post('/user-generator', function() {
 	foreach($allInputs as $key => $value) {
 		if ($key == 'birthdate')
 			$birthdaySelected = true;
-		else
-			$birthdaySelected = false;
-
-		if ($key == 'profile')
+		elseif ($key == 'profile')
 			$profileSelected = true;
-		else
+		else {
+			$birthdaySelected = false;
 			$profileSelected = false;
+		}
+		
 
 	}
 

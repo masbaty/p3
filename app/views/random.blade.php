@@ -33,14 +33,25 @@ How many users?
 			<h2>Here are your random users:</h2>
 			
 			
-		@for ($i=0; $i < $text['users']; $i++)
-			Name: {{ $faker->name }}
-			<br />
-			Birthdate: {{ $faker->dateTimeThisCentury->format('mm-dd-yyyy') }}
-			<br />
-			Profile:<br />{{ $faker->text }}
-			<br /><br />
-		@endfor
+			@for ($i=0; $i < $text['users']; $i++)
+				<ul>
+					<li>
+						Name: {{ $faker->name }}
+					</li>
+
+					@if ($text['birthdaySelected'])
+					<li>
+						Birthdate: {{ $faker->dateTimeThisCentury->format('mm-dd-yyyy') }}
+					</li>
+					@endif
+
+					@if ($text['profileSelected'])
+					<li>
+						{{ $faker->text }}
+					</li>
+					@endif
+				</ul>
+			@endfor
 
 		@endif
 </form>
