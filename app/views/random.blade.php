@@ -30,26 +30,17 @@ How many users?
 
 		
 		@if(isset($text))
-			<h2>Here is your Lorem Ipsum text:</h2>
-			{{ $faker->name }}
-			<br />
-			{{ $faker->address }}
-			<br />
-			{{ $faker->text }}
-
-			<br />
-			<br />
+			<h2>Here are your random users:</h2>
 			
-		<?php $i = 0;	?>
-		@while ($i < $text['users'])
-			{{ $faker->name }}
+			
+		@for ($i=0; $i < $text['users']; $i++)
+			Name: {{ $faker->name }}
 			<br />
-			{{ $faker->dateTimeThisCentury->format('mm-dd-yyyy') }}
+			Birthdate: {{ $faker->dateTimeThisCentury->format('mm-dd-yyyy') }}
 			<br />
-			{{ $faker->text }}
+			Profile:<br />{{ $faker->text }}
 			<br /><br />
-			<?php $i++; ?>
-		@endwhile
+		@endfor
 
 		@endif
 </form>
