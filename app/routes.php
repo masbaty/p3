@@ -16,10 +16,24 @@ Route::get('/', function()
 	return View::make('index');
 });
 
-Route::get('/lorem-ipsum', function() {
+
+Route::get('/lorem-ipsum/{number?}', function($number = 5) {
+
+	//$number = Input::get('number');
+
+	return View::make('lorem')
+		->with('number', $number);
+});
+
+Route::post('/lorem-ipsum', function() {
 	return View::make('lorem');
+		
 });
 
 Route::get('/user-generator', function() {
 	return View::make('random');
+});
+
+Route::post('/user-generator', function() {
+
 });
