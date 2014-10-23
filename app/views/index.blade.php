@@ -1,7 +1,7 @@
 @extends("_master")
 
 @section("title")
-	Project 3
+	Project 3 - Developer's Best Friend
 @stop
 
 @section("head")
