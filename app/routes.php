@@ -17,16 +17,22 @@ Route::get('/', function()
 });
 
 
-Route::get('/lorem-ipsum/{number?}', function($number = 5) {
+Route::get('/lorem-ipsum', function($number = 5) {
 
 	//$number = Input::get('number');
 
-	return View::make('lorem')
-		->with('number', $number);
+	return View::make('lorem');
 });
 
 Route::post('/lorem-ipsum', function() {
-	return View::make('lorem');
+
+	$number = Input::get('paragraphs');
+
+	$generator = new Badcow\LoremIpsum\Generator();
+	$paragraphs = $generator->getParagraphs($number); 
+	$text = array('number' => $number, 'paragraphs' => $paragraphs);
+	return View::make('lorem')
+		->with('text', $text);
 		
 });
 

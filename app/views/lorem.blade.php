@@ -13,10 +13,22 @@
 
 How many paragraphs? 
 
-<form method='GET' action='/lorem-ipsum'>
+<form method='POST'>
 		<label for='number'>Paragraphs: </label>
-		<input type='text' name='number' id='number' value={{{ $number }}} />
+			<input type='text' name='paragraphs' id='number' value='' />
 		<input type='submit' value='Generate Latin Text!' />
+
+
+		
+		@if(isset($text))
+			<h2>Here is your Lorem Ipsum text:</h2>
+
+			@foreach($text['paragraphs'] as $paragraph)
+				<p>
+					{{ $paragraph }}
+				</p
+			@endforeach
+		@endif
 </form>
 
 <!--
