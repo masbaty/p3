@@ -8,7 +8,7 @@ This project consists of 2 parts. The first part is a lorem ipsum generator that
 
 ## Demo
 My demo can be found at:
-FILLERTEXT
+http://www.screencast.com/t/hqS7FRcvAmN
 
 ## Details for Instructor/TA
 This project has been tested in the following browsers: Chrome, Firefox, and Internet Explorer.
