@@ -17,9 +17,8 @@ Route::get('/', function()
 });
 
 
-Route::get('/lorem-ipsum', function($number = 5) {
 
-	//$number = Input::get('number');
+Route::get('/lorem-ipsum', function($number = 5) {
 
 	return View::make('lorem');
 });
@@ -33,8 +32,9 @@ Route::post('/lorem-ipsum', function() {
 	$text = array('number' => $number, 'paragraphs' => $paragraphs);
 	return View::make('lorem')
 		->with('text', $text);
-		
 });
+
+
 
 Route::get('/user-generator', function() {
 	return View::make('random');
@@ -53,8 +53,6 @@ Route::post('/user-generator', function() {
 			$birthdaySelected = false;
 			$profileSelected = false;
 		}
-		
-
 	}
 
 	$faker = Faker\Factory::create();
@@ -63,5 +61,4 @@ Route::post('/user-generator', function() {
 	return View::make('random')
 		->with('text', $text)
 		->with('faker', $faker);
-
 });

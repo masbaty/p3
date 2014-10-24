@@ -13,41 +13,48 @@
 
 <h1>Random User Generator</h1>
 
-How many users? 
 
-<form method='POST'>
-		<label for='users'>How many users? </label>
-		@if (isset($text)) <input type='text' name='users' id='users' value={{ $text['users'] }} />
-		@else <input type='text' name='users' id='users' value='' />
+
+
+{{ Form::open (array('url' => '/user-generator', 'method' => 'POST')) }}
+		{{ Form::label('users', 'How many users? ') }}
+		@if (isset($text))
+			{{ Form::text('users', $text['users'] ) }}
+		@else 
+			{{ Form::text('users', '3' ) }}
 		@endif
 
 		<br />
 
 		@if (isset($text))
-			<label for='birthdate'>Birthdate </label>
+			{{ Form::label('birthdate', 'Birthdate? ') }}
 			@if ($text['birthdaySelected'])
-				<input type="checkbox" name='birthdate' id='birthdate' checked='checked' />
+				{{ Form::checkbox('birthdate', 'birthdate', true ) }}
 			@else
-				<input type="checkbox" name='birthdate' id='birthdate' />
+				{{ Form::checkbox('birthdate', 'birthdate' ) }}
 			@endif
 				<br />
 
-			<label for='profile'>Profile </label>
+			{{ Form::label('profile', 'Profile? ') }}
 			@if ($text['profileSelected'])
-				<input type="checkbox" name='profile' id='profile' checked='checked' />
+				{{ Form::checkbox('profile', 'profile', true ) }}
 			@else
-				<input type="checkbox" name='profile' id='profile' />
+				{{ Form::checkbox('profile', 'profile' ) }}
 			@endif
 			<br />
 		@else
-			<label for='birthdate'>Birthdate </label>
-				<input type="checkbox" name='birthdate' id='birthdate' /><br />
+			{{ Form::label('birthdate', 'Birthdate? ') }}
+				{{ Form::checkbox('birthdate', 'birthdate' ) }}
 
-			<label for='profile'>Profile </label>
-				<input type="checkbox" name='profile' id='profile' /><br />
+				<br />
+
+			{{ Form::label('profile', 'Profile? ') }}
+				{{ Form::checkbox('profile', 'profile' ) }}
+
+				<br />
 		@endif
 
-		<input type='submit' value='Generate Users!' />
+		{{ Form::submit('Generate Users!') }}
 
 
 		
@@ -76,6 +83,6 @@ How many users?
 			@endfor
 
 		@endif
-</form>
+{{ Form::close() }}
 
 @stop

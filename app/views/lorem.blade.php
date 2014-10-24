@@ -13,17 +13,24 @@
 
 <h1>Lorem Ipsum Generator</h1>
 
-How many paragraphs? 
+<p>
+	In publishing and graphic design, lorem ipsum is a filler text commonly used to demonstrate the graphic elements of a document or visual presentation. Replacing meaningful content that could be distracting with placeholder text may allow viewers to focus on graphic aspects such as font, typography, and page layout.
+	<br />
+	<a href="http://en.wikipedia.org/wiki/Lorem_ipsum">- Wikipedia</a>
+</p>
 
 <form method='POST'>
-		<label for='number'>Paragraphs: </label>
-		@if (isset($text))
-			<input type='text' name='paragraphs' id='number' value={{ $text['number'] }} />
-		@else
-			<input type='text' name='paragraphs' id='number' value=5 />
-		@endif
-		<input type='submit' value='Generate Latin Text!' />
+		
 
+{{ Form::open (array('url' => '/lorem-ipsum', 'method' => 'POST')) }}
+	{{ Form::label('number', 'How many paragraphs? ') }}
+	@if (isset($text))
+		{{ Form::text('paragraphs', $text['number']) }}
+	@else
+		{{ Form::text('paragraphs', '5') }}
+	@endif
+
+	{{ Form::submit('Generate Latin Text!'); }}
 
 		
 		@if(isset($text))
@@ -35,15 +42,9 @@ How many paragraphs?
 				</p
 			@endforeach
 		@endif
-</form>
-
-<!--
-{{ Form::open(array('url' => '/lorem-ipsum', 'method' => 'POST')) }}
-	{{ Form::label('paragraphs','Paragraphs') }}
-	{{ Form::text('paragraphs'); }}
-	{{ Form::submit('Get Latin Text!'); }}
 {{ Form::close() }}
--->
+
+
 
 <br /><br />
 

@@ -12,18 +12,18 @@
 	<h1>Developer's Best Friend!</h1>
 
 	<div id="lorem">
-		<h2>Lorem Ipsum Generator</h2>
+		<h3>Lorem Ipsum Generator</h3>
 		<p>
-			Lorem Ipsum Description
+			Generate random filler text.
 		</p>
 		<p id="generate">
 			<a href="lorem-ipsum">Generate!</a>
 		</p>
 	</div>
 	<div id="random">
-		<h2>Random User Generator</h2>
+		<h3>Random User Generator</h3>
 		<p>
-			Description
+			Generate random users.
 		</p>
 		<p id="generate">
 			<a href="user-generator">Generate!</a>
