@@ -1,5 +1,8 @@
 body {
-	background-color: #BADA55;
+	background-color: #FFFAFA;
+	margin-top: 25px;
+	width: 50%;
+	margin-left: 25%;
 }
 
 a:link,a:visited {
