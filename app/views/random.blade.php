@@ -70,7 +70,7 @@
 
 					@if ($text['birthdaySelected'])
 					<li>
-						Birthdate: {{ $faker->dateTimeThisCentury->format('mm-dd-yyyy') }}
+						Birthdate: {{ $faker->dateTimeThisCentury->format('m-d-Y') }}
 					</li>
 					@endif
 
