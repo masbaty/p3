@@ -17,7 +17,11 @@ How many paragraphs?
 
 <form method='POST'>
 		<label for='number'>Paragraphs: </label>
-			<input type='text' name='paragraphs' id='number' value='' />
+		@if (isset($text))
+			<input type='text' name='paragraphs' id='number' value={{ $text['number'] }} />
+		@else
+			<input type='text' name='paragraphs' id='number' value=5 />
+		@endif
 		<input type='submit' value='Generate Latin Text!' />
 
 
