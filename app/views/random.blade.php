@@ -17,13 +17,35 @@ How many users?
 
 <form method='POST'>
 		<label for='users'>How many users? </label>
-			<input type='text' name='users' id='users' value='' /><br />
+		@if (isset($text)) <input type='text' name='users' id='users' value={{ $text['users'] }} />
+		@else <input type='text' name='users' id='users' value='' />
+		@endif
 
-		<label for='birthdate'>Birthdate </label>
-			<input type="checkbox" name='birthdate' id='birthdate' /><br />
+		<br />
 
-		<label for='profile'>Profile </label>
-			<input type="checkbox" name='profile' id='profile' /><br />
+		@if (isset($text))
+			<label for='birthdate'>Birthdate </label>
+			@if ($text['birthdaySelected'])
+				<input type="checkbox" name='birthdate' id='birthdate' checked='checked' />
+			@else
+				<input type="checkbox" name='birthdate' id='birthdate' />
+			@endif
+				<br />
+
+			<label for='profile'>Profile </label>
+			@if ($text['profileSelected'])
+				<input type="checkbox" name='profile' id='profile' checked='checked' />
+			@else
+				<input type="checkbox" name='profile' id='profile' />
+			@endif
+			<br />
+		@else
+			<label for='birthdate'>Birthdate </label>
+				<input type="checkbox" name='birthdate' id='birthdate' /><br />
+
+			<label for='profile'>Profile </label>
+				<input type="checkbox" name='profile' id='profile' /><br />
+		@endif
 
 		<input type='submit' value='Generate Users!' />
 
