@@ -16,7 +16,7 @@
 		<p>
 			Generate random filler text.
 		</p>
-		<p id="generate">
+		<p class="generate">
 			<a href="lorem-ipsum">Generate!</a>
 		</p>
 	</div>
@@ -25,7 +25,7 @@
 		<p>
 			Generate random users.
 		</p>
-		<p id="generate">
+		<p class="generate">
 			<a href="user-generator">Generate!</a>
 		</p>
 	</div>

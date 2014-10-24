@@ -19,11 +19,9 @@
 	<a href="http://en.wikipedia.org/wiki/Lorem_ipsum">- Wikipedia</a>
 </p>
 
-<form method='POST'>
-		
 
 {{ Form::open (array('url' => '/lorem-ipsum', 'method' => 'POST')) }}
-	{{ Form::label('number', 'How many paragraphs? ') }}
+	{{ Form::label('paragraphs', 'How many paragraphs? ') }}
 	@if (isset($text))
 		{{ Form::text('paragraphs', $text['number']) }}
 	@else
